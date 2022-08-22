@@ -9,7 +9,7 @@ public class Snake : MonoBehaviour
     private List<Transform> _segments = new List<Transform>();
     public Transform SegmentPrefab;
     public int InitialSize = 3;
-
+    [SerializeField] private SwipeMobile control;
 
     private void Start()
     {
@@ -33,19 +33,19 @@ public class Snake : MonoBehaviour
     }
     public void SnakeMouvement()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (/*Input.GetKeyDown(KeyCode.Z)*/ control.VerticalSwipe > 0)
         {
             _direction = Vector2.up;
         }
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (/*Input.GetKeyDown(KeyCode.S)*/ control.VerticalSwipe < 0)
         {
             _direction = Vector2.down;
         }
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (/*Input.GetKeyDown(KeyCode.D)*/ control.HorizontalSwipe > 0)
         {
             _direction = Vector2.right;
         }
-        else if (Input.GetKeyDown(KeyCode.Q))
+        else if (/*Input.GetKeyDown(KeyCode.Q)*/ control.HorizontalSwipe < 0)
         {
             _direction = Vector2.left;
         }
