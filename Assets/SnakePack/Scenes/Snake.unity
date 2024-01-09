@@ -240,6 +240,7 @@ MonoBehaviour:
   SegmentPrefab: {fileID: 1898298193234802752, guid: c5edd43d5bac6284e87998dafaae8b26, type: 3}
   InitialSize: 3
   control: {fileID: 557568020}
+  Speed: 1
 --- !u!1 &789818804
 GameObject:
   m_ObjectHideFlags: 0

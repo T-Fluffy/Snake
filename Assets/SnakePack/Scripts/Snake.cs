@@ -10,7 +10,7 @@ public class Snake : MonoBehaviour
     public Transform SegmentPrefab;
     public int InitialSize = 3;
     [SerializeField] private SwipeMobile control;
-
+    public int Speed=10;
     private void Start()
     {
         ResetState();
@@ -26,8 +26,8 @@ public class Snake : MonoBehaviour
             _segments[i].position = _segments[i - 1].position;
         }
         this.transform.position=  new Vector3(
-            Mathf.Round(this.transform.position.x)+_direction.x,
-            Mathf.Round(this.transform.position.y)+_direction.y,
+            Mathf.Round(this.transform.position.x)+_direction.x * Speed *Time.deltaTime,
+            Mathf.Round(this.transform.position.y)+_direction.y * Speed * Time.deltaTime,
             0.0f
         );
     }
